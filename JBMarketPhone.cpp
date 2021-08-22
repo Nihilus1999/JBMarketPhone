@@ -4,8 +4,8 @@
 #include <math.h>
 #include <string.h>
 #include <time.h>
-#include <unistd.h>
 #include <iostream>
+#include <windows.h>
 
 FILE *user;
 
@@ -535,7 +535,7 @@ char archivo[1000],correo[100],nombre[100],apellido[100],pais[100],estado[100],m
 printf("Introduzca el nombre o indentificador del archivo:\n\n ");
 scanf("%s",&archivo);
 printf("\nNOTA: Recuerde su identificacion para iniciar sesion....");
-sleep(2);
+Sleep(2000);
 user = fopen(("%s",archivo),"w");// Abrir un nuevo archivo con sus datos correspondientes
 
 	printf("\n\nIntroduzca su clave(solo se puede numeros e iniciar diferente de cero): ");//impresion en la pantalla negra
@@ -559,10 +559,10 @@ user = fopen(("%s",archivo),"w");// Abrir un nuevo archivo con sus datos corresp
 	scanf("%s",&sexo);
 	printf("\nTelefono: ");
 	scanf("%s",&tele);
-	sleep(2);
+	Sleep(2000);
 	system("cls");
 	printf("\n\nSe ha realizado el proceso de forma exitosa\n\n");
-	sleep(3);
+	Sleep(3000);
 	system("cls");
 	
 	fprintf(user,"Dinero: "); // Impresion de los datos en el documento escrito
@@ -620,7 +620,7 @@ void remov(int y){
 	}else{
 		system("cls");
 		printf("La contrase%ca es invalida, volvera al menu\n\n",164);
-		sleep(2);
+		Sleep(2000);
 		system("cls");
 	}
 }
@@ -648,10 +648,10 @@ void edit(int z){
 			scanf("%s",&sexo);
 			printf("\nTelefono: ");
 			scanf("%s",tele);
-			sleep(2);
+			Sleep(2000);
 			system("cls");
 			printf("\n\nSe ha realizado el proceso de forma exitosa\n\n");
-			sleep(3);
+			Sleep(3000);
 			system("cls");
 			
 			fprintf(user,"***********DATOS DEL USUARIO*************\n\n");//impresion de los nuevos datos
@@ -727,7 +727,7 @@ int main(){
 	 	if(user == NULL){
 	 		system("cls");
 	 		printf("\n\nNo existe el identificador\n");
-	 		sleep(2);
+	 		Sleep(2000);
 	 		system("cls");
 	 		goto login;
 	 	}
@@ -836,7 +836,7 @@ int main(){
 						break;
 						case 2:
 							printf("Cancelando el pedido....");
-							sleep(2);
+							Sleep(2000);
 							system("cls");
 							goto menu1;
 							break;
@@ -882,7 +882,7 @@ int main(){
 								money = money - total;
 								if(money<total){
 									printf("Monto invalido");
-									sleep(3);
+									Sleep(3000);
 									goto menu2;
 									system("cls");
 								}else{
@@ -958,7 +958,7 @@ int main(){
 		}
 	} while(ingresa == fals || contador == 0);
 		printf("Por cuestiones de seguridad, su cuenta ha sido cerrada, volvera al menu principal\n\n");
-		sleep(5);
+		Sleep(5000);
 		system("cls");
 	 	break;
 		case 2:
@@ -973,6 +973,6 @@ int main(){
 	}
 } while(op != 4);
 printf("\nGracias por visitarnos\n\n");
-sleep(3);
+Sleep(3000);
 return 0;
 }
